@@ -1,0 +1,197 @@
+html{font-size:62.5%;overflow-y:scroll}
+
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+}
+body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: "Homemade Apple", cursive;
+	font-weight: 400;
+	font-style: normal;
+	color: #fff;
+}
+body::before,
+body::after{
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 15px;
+	z-index: 20;
+	background: -webkit-repeating-linear-gradient(135deg, #dd6c98 0px, #dd6c98 20px, #fefdf3 20px, #fefdf3 40px, #4376b3 40px, #4376b3 60px, #fefdf3 60px, #fefdf3 80px);
+	background: repeating-linear-gradient(135deg, #dd6c98 0px, #dd6c98 20px, #fefdf3 20px, #fefdf3 40px, #4376b3 40px, #4376b3 60px, #fefdf3 60px, #fefdf3 80px);
+	-webkit-box-shadow: 0 0 6px rgba(67,118,179,0.6);
+	-moz-box-shadow: 0 0 6px rgba(67,118,179,0.6);
+	box-shadow: 0 0 6px rgba(67,118,179,0.6);
+}
+body::before{
+	top: 0;
+}
+body::after{
+	bottom: 0;
+}
+.watercover{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	padding: 0 12%;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(40,67,119);
+	mix-blend-mode:overlay;
+}
+.titlebox{ 
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+ }
+.h1title{
+	position: relative;
+	margin: auto;
+	font-size: 4rem;
+	z-index: 100;
+	box-sizing: border-box;
+	display: inline-block;
+    background-size: 500% 100%;
+	background-image: linear-gradient(
+	70deg,
+	rgba(104, 221, 212, 0.6) 45%, 
+	#68ddd4 50%,
+	rgba(104, 221, 212, 0.6) 55%
+	);
+	color: #fff;
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: shine 5s infinite;
+	padding: 10px;
+}
+@keyframes shine {
+	0% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+@media screen and (max-width: 400px) {
+	.h1title{ font-size: 3rem; }
+}
+
+.starry_sky {
+	background: -webkit-linear-gradient(top, rgb(178, 170, 235) 50%, rgb(207, 198, 247)80%, rgb(243, 192, 239));
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	z-index: 1;
+}
+.starry_sky .img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 10;
+}
+.constellation {
+	background-attachment: scroll;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	animation: rotate 600s infinite linear;
+}
+.star {
+	background-color: white;
+	border-radius: 50%;
+	position: absolute;
+	animation-name: star;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.star.style1 {
+	animation-duration: 0.5s;
+	animation-name: star;
+}
+.star.style2 {
+	animation-duration: 1s;
+	animation-name: star;
+}
+.star.style3 {
+	animation-duration: 1.5s;
+	animation-name: star;
+}
+.star.style4 {
+	animation-duration: 2s;
+	animation-name: starFeat;
+}
+.star.tam1 {
+	width: 1px;
+	height: 1px;
+}
+.star.tam2 {
+	width: 2px;
+	height: 2px;
+}
+.star.tam3 {
+	width: 3px;
+	height: 3px;
+}
+.star.opacity1 {
+	opacity: 1;
+}
+.star.opacity2 {
+	opacity: .5;
+}
+.star.opacity3 {
+	opacity: .1;
+}
+@keyframes star {
+	0% {
+		box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+	}
+	50% {
+		box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+	}
+	100% {
+		box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+	}
+}
+@keyframes starFeat {
+	0% {
+		background-color: #FFFFFF;
+		box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+	}
+	20% {
+		background-color: #FFC4C4;
+		box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+	}
+	80% {
+		background-color: #C4CFFF;
+		box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+	}
+	100% {
+		background-color: #FFFFFF;
+		box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+	}
+}
